@@ -1,0 +1,25 @@
+@target "Target";
+
+.names {
+
+};
+
+#single-name {
+
+};
+
+classname {
+
+};
+
+classname[prop="value"] {
+
+}
+
+.names[prop="value"] {
+
+}
+
+#single-name[prop="value"] {
+	
+}

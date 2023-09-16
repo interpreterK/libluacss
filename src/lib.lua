@@ -5,9 +5,7 @@
 ]]
 
 local libluacss={}
-local libbind={
-	events = {}
-}
+local libbind={}
 libluacss.__index=libluacss
 libbind.__index=libbind
 
@@ -36,7 +34,9 @@ local function new_bind_collection(Events)
 end
 
 function libbind.new(Type)
-	return setmetatable({}, libbind)
+	return setmetatable({
+		events={}
+	}, libbind)
 end
 
 function libbind:connect(callback)
@@ -61,7 +61,7 @@ function libluacss.new(StyleSheet_Lang, StyleSheet_Source)
 		PropertyParsed=libbind.new("PropertyParsed"),
 		Parsed=libbind.new("Parsed")
 	})
-	return setmetatable(libluacss, self)
+	return setmetatable(self, libbind)
 end
 
 --[[
